@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net"
 	"os"
-	"smOwd/logs"
+	"smOwd2/logs"
 	"strings"
 	"time"
 

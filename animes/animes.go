@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"smOwd/logs"
+	"smOwd2/logs"
 	"unicode"
 
 	"strings"

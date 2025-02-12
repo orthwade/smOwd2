@@ -1,7 +1,10 @@
 package misc
 
 import (
+	"context"
+	"os"
 	"regexp"
+	"smOwd2/logs"
 	"sort"
 	"strconv"
 	"strings"
@@ -105,4 +108,12 @@ func Fatal(ctx context.Context, err error) {
 	cancel := ctx.Value("cancel")
 
 	cancel()
+}
+
+func LoadEnv(ctx context.Context) {
+	logger := logs.DefaultFromCtx(ctx)
+
+	dir, err := os.Getwd()
+	
+	if
 }

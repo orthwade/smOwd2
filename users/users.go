@@ -84,7 +84,7 @@ func Find(ctx context.Context, db *sql.DB, fieldName string,
 	logger := logs.DefaultFromCtx(ctx)
 
 	query := fmt.Sprintf(`
-		SELECT id, telegram_id, chat_id, first_name, last_name, user_name, language_code, is_bot, enabled
+		SELECT id, telegram_id, chat_id, first_name, last_name, user_name, language_code, is_bot, enabled, access_token, refresh_token
 		FROM %s
 		WHERE %s = $1;
 	`, tableName, fieldName)
@@ -100,6 +100,8 @@ func Find(ctx context.Context, db *sql.DB, fieldName string,
 		&user.LanguageCode,
 		&user.IsBot,
 		&user.Enabled,
+		&user.AccessToken,
+		&user.RefreshToken,
 	)
 	if err != nil {
 		if err == sql.ErrNoRows {
